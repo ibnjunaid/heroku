@@ -45,7 +45,7 @@ var dbQuery_1 = require("./dbQuery");
 var routes = express_1.default.Router();
 var mongo = Configs_1.client.connect();
 routes.get('/', function (req, res) {
-    res.redirect('/static/');
+    res.send("Hello world . hit /trend");
 });
 //This path get $Woeid as URI Parameter and $Ttime as query parameters 
 //Woeid : Integer
