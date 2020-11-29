@@ -62,6 +62,7 @@ var Configs_1 = require("./Commons/Configs");
 var mongoose = require("mongoose");
 var min = 1000 * 60;
 var interval = 59 * min;
+var PORT = Number(process.env.PORT) || 5000;
 var conn = mongoose.connect(Configs_1.URI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: Configs_1.databaseName });
 function sleep(ms) {
     return new Promise(function (resolve) { return setTimeout(resolve, ms); });
@@ -120,8 +121,8 @@ function start() {
         });
     });
 }
-server_1.app.listen(8080, "localhost", function () {
-    console.log("Server listening on http://localhost:8080");
+server_1.app.listen(PORT, "localhost", function () {
+    console.log("Server listening on http://localhost:" + PORT);
 });
 start()
     .catch(function (err) { console.log("ERROR IS BEING HANDELED"); });
