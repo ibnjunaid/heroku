@@ -121,7 +121,7 @@ function start() {
         });
     });
 }
-server_1.app.listen(PORT, "localhost", function () {
+server_1.app.listen(PORT, "0.0.0.0", function () {
     console.log("Server listening on http://localhost:" + PORT);
 });
 start()
